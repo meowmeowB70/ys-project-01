@@ -253,7 +253,7 @@ const questions = [
     ]
   },
   {
-    text: "終於到了休假，你更想要去哪裡放鬆？",
+    text: "終於到了休假，你最想去哪裡放鬆？",
     scored: true,
     options: [
       {
