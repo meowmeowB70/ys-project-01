@@ -284,7 +284,7 @@ const questions = [
     ]
   },
   {
-    text: "完成這項測驗後，你最期待的是？（此題不影響結果）",
+    text: "完成這項測驗後，你最期待的是？",
     scored: false,
     options: [
       {
