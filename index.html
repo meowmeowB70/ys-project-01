@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>萌力全開！你的潛能角色大揭曉</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- 若未來要回復頁面主標題可以使用 -->
+    <!--
+    <header class="app-header">
+      <h1>萌力全開！你的潛能角色大揭曉</h1>
+    </header>
+    -->
+
+    <!-- Step 1：首頁 / 基本資料 -->
+    <!-- Step 1：首頁 / 基本資料 -->
+
+
+
+
+
+
+
+
+
+    <section id="step-intro" class="step active">
+
+      <!-- 上半區：標題 + GIF -->
+      <div class="intro-top">
+        <h1 class="intro-title">
+          萌力全開！<br />
+          你的潛能角色大揭曉
+        </h1>
+
+        <div class="intro-visual">
+          <img src="gif/loading01.gif" alt="Loading" class="Loading-gif" />
+        </div>
+      </div>
+
+      <!-- 下半區：卡片 + 按鈕 -->
+      <div class="intro-bottom">
+
+        <div class="card intro-card">
+          <p class="intro-status">角色登錄中…</p>
+
+          <form id="introForm" novalidate>
+            <div class="form-group form-inline">
+              <label for="name">姓名</label>
+              <input type="text" id="name" name="name" placeholder="請輸入姓名" />
+            </div>
+
+            <div class="form-group form-inline">
+              <label for="email">電子信箱</label>
+              <input type="email" id="email" name="email" placeholder="example@mail.com" />
+            </div>
+
+            <div class="form-row">
+              <label for="status">我目前的身分別</label>
+              <select id="status" name="status">
+                <option value="">請選擇身分別</option>
+                <option value="在職工作者">在職工作者</option>
+                <option value="找工作的青年 (15~29歲)">找工作的青年 (15~29歲)</option>
+                <option value="一般民眾找工作">一般民眾找工作</option>
+                <option value="即將畢業的學生">即將畢業的學生</option>
+                <option value="努力讀書好學生">努力讀書好學生</option>
+              </select>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" id="privacy" name="privacy" />
+                我已閱讀並同意
+                <button type="button" class="link-button" id="btnPrivacy">隱私權聲明</button>
+              </label>
+            </div>
+
+          </form>
+        </div>
+
+        <button type="button" id="btnStart" class="btn primary full intro-start-btn">
+          開始能力值調查
+        </button>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Step 2：選擇題測驗（滿版背景版） -->
+    <section id="step-quiz" class="step quiz-step">
+      <div class="quiz-inner">
+        <div class="quiz-header">
+          <button type="button" id="btnHome" class="btn-icon" aria-label="回首頁">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" />
+            </svg>
+          </button>
+          <div class="progress-bar">
+            <div class="progress-bar-inner" id="progressInner"></div>
+          </div>
+        </div>
+
+        <!-- 題目與選項由 script.js 動態插入 -->
+        <div class="quiz-question-wrap">
+          <div id="questionContainer"></div>
+        </div>
+
+        <div class="quiz-nav">
+          <button type="button" id="btnPrev" class="btn ghost" disabled>上一題</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3：Loading 畫面（計算中） -->
+    <section id="step-loading" class="step loading-step">
+      <div class="loading-inner">
+        <img src="gif/loading02.gif" alt="能力值分析中" class="loading-icon" />
+        <p class="loading-text">正在分析你的能力值組成…</p>
+        <p class="loading-sub">為你匹配最適合的未來角色與產業方向</p>
+      </div>
+    </section>
+
+    <!-- Step 4：結果頁 -->
+    <section id="step-result" class="step result-step">
+      <div class="result-container">
+
+        <h2 class="result-title-text">萌力全開！你的潛能角色大揭曉</h2>
+
+        <p class="result-greeting">
+          <span id="resultName"></span>&nbsp;&nbsp;在未來世界裡，你是：
+        </p>
+
+        <!-- 結果圖 -->
+        <img id="resultMainImage" src="" alt="結果圖" class="result-main-img" />
+
+        <!-- 1. 前往產業新尖兵 -->
+        <a href="https://elite.taiwanjobs.gov.tw/" target="_blank" rel="noopener"
+          class="btn primary video-btn center-link">
+          前往產業新尖兵計畫網，激發潛能
+        </a>
+
+        <!-- 2. 分享結果 -->
+        <button type="button" id="btnShare" class="btn primary video-btn">
+          分享結果，和新夥伴一起揭曉角色
+        </button>
+
+        <!-- 3. 重新測驗 -->
+        <button type="button" id="btnRestart" class="btn primary video-btn">
+          重新測驗
+        </button>
+
+        <!-- gif -->
+        <img src="gif/result_share.gif" alt="Share" class="result-share-gif" />
+
+        <!-- result_plan png -->
+        <img src="image/result_plan.png" alt="Plan" class="result-middle-img" />
+
+        <!-- 4. 前往台灣就業通 -->
+        <a id="btnTaiwanJobs" href="https://www.taiwanjobs.gov.tw/Internet/Index/index.aspx" target="_blank"
+          rel="noopener" class="btn primary video-btn center-link">
+          前往台灣就業通，求職/求才/找課程
+        </a>
+
+        <!-- 底部圖 -->
+        <img src="image/result_bottom.png" alt="Bottom" class="result-bottom-img" />
+
+      </div>
+    </section>
+
+    <!-- Google 表單隱藏送出區 -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    <form id="googleForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSc5Ot2mBFfwi2YHOg_DpwqAeWnQCZaCHRejVjYLc1DzjixNHw/formResponse"
+      method="POST" target="hidden_iframe" class="hidden">
+      <!-- 基本資料：姓名 / Email / 身分 -->
+      <input type="hidden" id="gf-name" name="entry.1416765728" />
+      <input type="hidden" id="gf-email" name="entry.51782089" />
+      <input type="hidden" id="gf-status" name="entry.2430158" />
+
+      <!-- 題目 1～8：選項文字（第 8 題為不計分的期待題） -->
+      <input type="hidden" id="gf-q1" name="entry.141902808" />
+      <input type="hidden" id="gf-q2" name="entry.1266813088" />
+      <input type="hidden" id="gf-q3" name="entry.407653922" />
+      <input type="hidden" id="gf-q4" name="entry.886265198" />
+      <input type="hidden" id="gf-q5" name="entry.2018539392" />
+      <input type="hidden" id="gf-q6" name="entry.1546466576" />
+      <input type="hidden" id="gf-q7" name="entry.2146937225" />
+      <input type="hidden" id="gf-q8" name="entry.495124924" />
+
+      <!-- 特質分數（最高分類型的分數）、結果（類型＋分佈字串） -->
+      <input type="hidden" id="gf-score" name="entry.1688722459" />
+      <input type="hidden" id="gf-result" name="entry.1468229556" />
+    </form>
+
+    <!-- 隱私權彈跳視窗 -->
+    <div id="privacyModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <h3>隱私權聲明</h3>
+        <div class="modal-body">
+          <p class="privacy-item">一、本分署欲取得您的個人資料，目的在於辦理「產業新尖兵計畫相關測驗」。蒐集、處理及使用您的個人資料，是受到個人資料保護法及相關法令之規範。</p>
+
+          <p class="privacy-item">二、本次蒐集與使用您的個人資料包含姓名、E-mail、身分別、本測驗結果，提供本分署辦理相關作業及後續業務推廣使用。</p>
+
+          <p class="privacy-item">
+            三、您可依個人資料保護法第3條規定，就您的個人資料向本分署：（1）請求查詢或閱覽、（2）請求製給複製本、（3）請求補充或更正、（4）請求停止蒐集、處理及利用或（5）請求刪除。但因本分署執行職務或業務所必需者及受其他法律所規範者，本分署得拒絕之。
+          </p>
+
+          <p class="privacy-item">四、本同意書如有未盡事宜，依個人資料保護法或其他相關法規之規定辦理。</p>
+
+          <p class="privacy-item">五、您瞭解此一同意書符合個人資料保護法及相關法規之要求，具有書面同意本分署蒐集、處理及使用您的個人資料之效果。</p>
+        </div>
+        <button type="button" id="btnPrivacyClose" class="btn primary full">我已詳細閱讀、瞭解並同意上述內容</button>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      <p>勞動部勞動力發展署-中彰投分署-專案辦公室製作©。</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
