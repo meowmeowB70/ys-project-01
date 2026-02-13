@@ -139,7 +139,7 @@ const questions = [
       {
         text: "知名品牌行銷案例、國際市場分析",
         main: "MARKETING",
-        sub: "DIGITAL"
+        sub: "GREEN"
       }
     ]
   },
@@ -160,7 +160,7 @@ const questions = [
       {
         text: "關注專案的ESG及環境永續",
         main: "GREEN",
-        sub: "MARKETING"
+        sub: "ELECTRICAL"
       },
       {
         text: "擬定方針，建立策略",
